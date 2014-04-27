@@ -1,6 +1,6 @@
 ﻿using System;
-using Xamarin.QuickUI.Platform.Android;
-using Xamarin.QuickUI;
+using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms;
 using Meetum.Views;
 using Meetum.Android;
 using Android.Widget;
@@ -8,7 +8,7 @@ using Android.Graphics.Drawables.Shapes;
 using Android.Graphics.Drawables;
 using Android.Graphics;
 
-using Color = Xamarin.QuickUI.Color;
+using Color = Xamarin.Forms.Color;
 using View = global::Android.Views.View;
 using ViewGroup = global::Android.Views.ViewGroup;
 using Context = global::Android.Content.Context;

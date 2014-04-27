@@ -1,7 +1,7 @@
 ﻿using System;
-using Xamarin.QuickUI.Platform.iOS;
+using Xamarin.Forms.Platform.iOS;
 using MonoTouch.UIKit;
-using Xamarin.QuickUI;
+using Xamarin.Forms;
 using Meetum.iOS;
 
 [assembly: ExportRenderer (typeof (MasterDetailPage), typeof (CustomTabletMasterDetailRenderer), UIUserInterfaceIdiom.Pad)]

@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Xamarin.QuickUI;
+using Xamarin.Forms;
 using System.Threading.Tasks;
 
 namespace Meetum.Views

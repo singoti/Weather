@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using Xamarin.QuickUI;
+using Xamarin.Forms;
 using Xamarin;
 using Meetum.Views;
 using System.Threading.Tasks;
@@ -20,8 +20,8 @@ namespace Meetum.iOS
             window = new UIWindow (UIScreen.MainScreen.Bounds);
             
             Meetum.Init(typeof(Meetum).Assembly);
-            QuickUI.Init();
-            QuickUIMaps.Init();
+            Forms.Init();
+            FormsMaps.Init();
 
             window.RootViewController = BuildView();
             window.MakeKeyAndVisible ();

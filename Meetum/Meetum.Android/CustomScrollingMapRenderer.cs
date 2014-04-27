@@ -1,8 +1,8 @@
 ﻿using System;
-using Xamarin.QuickUI.Maps.Android;
+using Xamarin.Forms.Maps.Android;
 using Android.Views;
-using Xamarin.QuickUI;
-using Xamarin.QuickUI.Maps;
+using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 using Meetum.Android;
 using AndroidView = Android.Views.View;
 using Meetum.Controls;

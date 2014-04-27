@@ -44,26 +44,26 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="Xamarin.QuickUI.Core">
-      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6431\lib\MonoAndroid10\Xamarin.QuickUI.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.QuickUI.Maps">
-      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6431\lib\MonoAndroid10\Xamarin.QuickUI.Maps.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.QuickUI.Maps.Android">
-      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6431\lib\MonoAndroid10\Xamarin.QuickUI.Maps.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.QuickUI.Platform.Android">
-      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6431\lib\MonoAndroid10\Xamarin.QuickUI.Platform.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.QuickUI.Xaml">
-      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6431\lib\MonoAndroid10\Xamarin.QuickUI.Xaml.dll</HintPath>
+    <Reference Include="GooglePlayServicesLib">
+      <HintPath>..\Components\googleplayservicesjellybean-16.0\lib\android\GooglePlayServicesLib.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\Components\xamandroidsupportv4-18-4.19.0.1\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
-    <Reference Include="GooglePlayServicesLib">
-      <HintPath>..\Components\googleplayservicesjellybean-16.0\lib\android\GooglePlayServicesLib.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.Android">
+      <HintPath>..\packages\Xamarin.Forms.Maps.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Maps.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -102,12 +102,12 @@
       <Name>Meetum.Controls</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets" Condition="Exists('..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets" Condition="Exists('..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets'))" />
   </Target>
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv4-18">

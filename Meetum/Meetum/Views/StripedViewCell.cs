@@ -1,4 +1,4 @@
-using Xamarin.QuickUI;
+using Xamarin.Forms;
 
 namespace Meetum.Views
 {

@@ -1,6 +1,6 @@
-using Xamarin.QuickUI.Platform.iOS;
+using Xamarin.Forms.Platform.iOS;
 using Meetum.Views;
-using Xamarin.QuickUI;
+using Xamarin.Forms;
 using MonoTouch.UIKit;
 using Meetum.iOS;
 

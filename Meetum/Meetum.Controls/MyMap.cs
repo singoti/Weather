@@ -1,4 +1,4 @@
-using Xamarin.QuickUI.Maps;
+using Xamarin.Forms.Maps;
 using System.Collections;
 
 namespace Meetum.Controls

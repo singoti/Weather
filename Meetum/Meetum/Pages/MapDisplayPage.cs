@@ -1,4 +1,4 @@
-using Xamarin.QuickUI;
+using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;

@@ -4,11 +4,11 @@ using Android.Widget;
 using System.ComponentModel;
 
 using AScrollView = Android.Widget.HorizontalScrollView;
-using ScrollView = Xamarin.QuickUI.ScrollView;
+using ScrollView = Xamarin.Forms.ScrollView;
 using AView = Android.Views.View;
-using View = Xamarin.QuickUI.View;
-using Xamarin.QuickUI;
-using Xamarin.QuickUI.Platform.Android;
+using View = Xamarin.Forms.View;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 using Meetum.Controls.Android;
 
 [assembly: ExportRenderer (typeof (Meetum.Controls.HorizontalScrollView), typeof (HorizontalScrollViewRenderer))]
@@ -90,7 +90,7 @@ namespace Meetum.Controls.Android
             get { return this.tracker; }
         }
 
-        public HorizontalScrollViewRenderer () : base (QuickUI.Context)
+        public HorizontalScrollViewRenderer () : base (Forms.Context)
         {
 
         }
@@ -103,7 +103,7 @@ namespace Meetum.Controls.Android
 
             view.PropertyChanged += HandlePropertyChanged;
 
-            container = new HorizontalScrollViewContainer (this, view, QuickUI.Context);
+            container = new HorizontalScrollViewContainer (this, view, Forms.Context);
             AddView (container);
 
             LoadContent ();

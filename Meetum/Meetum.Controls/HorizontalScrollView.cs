@@ -1,5 +1,5 @@
 ﻿using System;
-using Xamarin.QuickUI;
+using Xamarin.Forms;
 
 namespace Meetum.Controls
 {

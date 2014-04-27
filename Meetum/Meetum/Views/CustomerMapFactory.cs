@@ -1,6 +1,6 @@
 ﻿using System;
-using Xamarin.QuickUI;
-using Xamarin.QuickUI.Maps;
+using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 using System.Linq;
 using System.Diagnostics;
 using Meetum.Controls;

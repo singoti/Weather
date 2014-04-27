@@ -3,7 +3,7 @@ using Android.Support.V4.View;
 using Android.Views;
 using Meetum.Controls;
 
-namespace Xamarin.QuickUI.Platform.Android
+namespace Xamarin.Forms.Platform.Android
 {
     public class CarouselViewRenderer : BaseViewRenderer, ViewPager.IOnPageChangeListener
     {
