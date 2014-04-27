@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2025E1CB-D139-482E-B35E-A2C35082A207}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
@@ -40,19 +38,34 @@
     <Compile Include="Models\OptionItem.cs" />
     <Compile Include="Views\DarkTextCell.cs" />
     <Compile Include="Models\TabItem.cs" />
-    <Compile Include="Pages\CustomerMapDisplayView.cs" />
-    <Compile Include="Pages\CustomerMapOptionsView.cs" />
     <Compile Include="Views\CustomerMapFactory.cs" />
+    <Compile Include="Pages\MapOptionsPage.cs" />
+    <Compile Include="Pages\MapDisplayPage.cs" />
+    <Compile Include="Views\ScrollableStackLayout.cs" />
+    <Compile Include="Meetum.cs" />
+    <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Label.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Author2.cs" />
+    <Compile Include="Models\Link.cs" />
+    <Compile Include="Models\Author3.cs" />
+    <Compile Include="Models\Point.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\POI.cs" />
+    <Compile Include="Models\TestData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.QuickUI.Core">
-      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6431\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.QuickUI.Maps">
-      <HintPath>..\packages\Xamarin.QuickUI.Maps.1.0.6175\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Maps.dll</HintPath>
+      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6431\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Maps.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.QuickUI.Xaml">
-      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6431\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,11 +73,25 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="../packages/Xamarin.QuickUI.Master.1.0.6375/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets" Condition="Exists('../packages/Xamarin.QuickUI.Master.1.0.6375/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets')" />
-  <Import Project="..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets" Condition="Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" />
+  <Import Project="..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets" Condition="Exists('..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.QuickUI.Master.1.0.6431\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Master.targets'))" />
   </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\Meetum.Controls\Meetum.Controls.csproj">
+      <Project>{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}</Project>
+      <Name>Meetum.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Models\Poi.json">
+      <LogicalName>Meetum.Models.Poi.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

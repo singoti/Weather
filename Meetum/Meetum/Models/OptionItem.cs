@@ -10,6 +10,14 @@ namespace Meetum.Views
 	{
         public string Title { get; set; }
         public string Subtitle { get; set; }
+        public bool Selected { get; set; }
+        public Color BackgroundColor
+        {
+            get
+            {
+                return Selected ? Color.Gray : Color.Transparent;
+            }
+        }
 	}
 }
 

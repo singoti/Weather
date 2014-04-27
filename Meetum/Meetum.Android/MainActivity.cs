@@ -15,6 +15,7 @@ namespace Meetum.Android
 
             QuickUI.Init(this, bundle);
             QuickUIMaps.Init(this, bundle);
+            Meetum.Init(typeof(Meetum).Assembly);
 
             // Set our view from the "main" layout resource
             SetPage (BuildView());

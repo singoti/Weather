@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meetum", "Meetum\Meetum.csproj", "{2025E1CB-D139-482E-B35E-A2C35082A207}"
@@ -8,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meetum.iOS", "Meetum.iOS\Meetum.iOS.csproj", "{6A02ABA0-EE87-4C04-A065-BEF98D7F4E53}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meetum.Android", "Meetum.Android\Meetum.Android.csproj", "{83491F6D-BA09-477D-9DC0-3E670794579F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meetum.Controls", "Meetum.Controls\Meetum.Controls.csproj", "{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,11 +100,35 @@ Global
 		{83491F6D-BA09-477D-9DC0-3E670794579F}.Release|iPhone.Build.0 = Release|Any CPU
 		{83491F6D-BA09-477D-9DC0-3E670794579F}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{83491F6D-BA09-477D-9DC0-3E670794579F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Release|iPhone.Build.0 = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Meetum.iOS\Meetum.iOS.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

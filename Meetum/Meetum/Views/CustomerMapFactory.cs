@@ -3,14 +3,39 @@ using Xamarin.QuickUI;
 using Xamarin.QuickUI.Maps;
 using System.Linq;
 using System.Diagnostics;
+using Meetum.Controls;
+using System.Collections.Generic;
+using System.Resources;
+using Meetum.Models;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Meetum.Views
 {
     public static class CustomerMapFactory
     {
+        public static StackLayout InitalizeList (ContentPage parent)
+        {
+            var data = LoadData ();
+            var list = new ListView();
+            list.ItemSource = data;
+            var cell = new DataTemplate(typeof(TextCell));
+            cell.SetBinding(TextCell.TextProperty, "Labels[0].Value");
+            cell.SetBinding(TextCell.DetailProperty, "Categories[0].Value");
+
+            list.ItemTemplate = cell;
+
+            var stack = new StackLayout();
+            stack.Children.Add(list);
+
+            return stack;
+        }
+
         public static StackLayout InitializeMap (ContentPage parent)
         {
             var map = MakeMap ();
+            map.HasScrollEnabled = true;
+            map.HasZoomEnabled = false;
 
             var searchAddress = new SearchBar { Placeholder = "Search Address" };
 
@@ -23,7 +48,7 @@ namespace Meetum.Views
                 if (!positions.Any ())
                     return;
 
-                var position = positions.First ();
+                var position = positions [0];
                 map.MoveToRegion (MapSpan.FromCenterAndRadius (position,
                     Distance.FromMeters (4000)));
                 map.Pins.Add (new Pin {
@@ -40,22 +65,9 @@ namespace Meetum.Views
                     Debug.WriteLine (ad);
             };
 
-            parent.ToolbarItems.Add(new ToolbarItem("Zoom In", "zoom_in.png", () => map.MoveToRegion (map.VisibleRegion.WithZoom (5f))));
-            parent.ToolbarItems.Add(new ToolbarItem("Zoom Out", "zoom_out.png", () => map.MoveToRegion (map.VisibleRegion.WithZoom (1 / 3f))));
-            parent.ToolbarItems.Add(new ToolbarItem("Map Type", "map.png", async ()=> {
-                    var result = await parent.DisplayActionSheet ("Select Map Type", null, null, "Street", "Satellite", "Hybrid");
-                    switch (result) {
-                    case "Street":
-                        map.MapType = MapType.Street;
-                        break;
-                    case "Satellite":
-                        map.MapType = MapType.Satellite;
-                        break;
-                    case "Hybrid":
-                        map.MapType = MapType.Hybrid;
-                        break;
-                    }
-                }));
+            //Device.BeginInvokeOnMainThread(() => this.Title = "Thread Safe");
+
+            parent.ToolbarItems.Add(new ToolbarItem("Filter", "filter.png", () => {}));
 
             var buttonZoomIn = new Button { Text = "Zoom In", TextColor = Color.White };
             buttonZoomIn.Clicked += (e, a) => map.MoveToRegion (map.VisibleRegion.WithZoom (5f));
@@ -79,7 +91,7 @@ namespace Meetum.Views
                 }
             };
 
-            var stack = new StackLayout { Spacing = 0, BackgroundColor = Color.FromHex("DAD0C8")};
+            var stack = new StackLayout { Spacing = 0, BackgroundColor = Color.FromHex("A19887")};
 
             map.VerticalOptions = LayoutOptions.FillAndExpand;
             map.HeightRequest = 100;
@@ -104,30 +116,46 @@ namespace Meetum.Views
             return stack;
         }
 
+        static List<POI> LoadData ()
+        {
+            if (Meetum.PointsOfInterest != null) return Meetum.PointsOfInterest;
+
+            var jsonStream = Meetum.LoadResource ("Meetum.Models.Poi.json");
+            TestData data = null;
+            using (var jsonReader = new StreamReader (jsonStream)) {
+                var json = jsonReader.ReadToEnd ();
+                data = global::Newtonsoft.Json.JsonConvert.DeserializeObject<TestData> (json);
+            }
+            Meetum.PointsOfInterest = data.PointsOfInterest;
+
+            return data.PointsOfInterest;
+        }
+
         public static Map MakeMap ()
         {
-            return new Map {
-                Pins = {
-                    new Pin {
-                        Type = PinType.Place,
-                        Position = new Position (41.890202, 12.492049),
-                        Label = "Colosseum",
-                        Address = "Piazza del Colosseo, 00184 Rome, Province of Rome, Italy"
-                    },
-                    new Pin {
-                        Type = PinType.Place,
-                        Position = new Position (41.898652, 12.476831),
-                        Label = "Pantheon",
-                        Address = "Piazza della Rotunda, 00186 Rome, Province of Rome, Italy"
-                    },
-                    new Pin {
-                        Type = PinType.Place,
-                        Position = new Position (41.903209, 12.454545),
-                        Label = "Sistine Chapel",
-                        Address = "Piazza della Rotunda, 00186 Rome, Province of Rome, Italy"
-                    }
-                }
-            };
+            var data = LoadData ();
+
+            var pins = data.Select(p => {
+                var pos = p.Location.Points[0];
+                var poslist = pos.Poslist.Split(' ');
+                var pin = new Pin {
+                    Type = PinType.Place,
+                    Position = new Position (Convert.ToDouble(poslist[0]), Convert.ToDouble(poslist[1])),
+                    Label = p.Labels[0].Value,
+                    Address = (String)p.Location.Address ?? (String)p.Location.Value ?? (String)p.Location.Points[0].Value
+                };
+                return pin;
+            }).ToList();
+
+            var xamarin = new Position(37.797536, -122.401933);;
+            var m = new MyMap(MapSpan.FromCenterAndRadius(xamarin, Distance.FromMiles(0.1)));
+
+            foreach(var p in pins) 
+            {
+                m.Pins.Add(p);
+            }
+
+            return m;
         }
     }
 }

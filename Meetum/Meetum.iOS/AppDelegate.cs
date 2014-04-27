@@ -6,6 +6,7 @@ using MonoTouch.UIKit;
 using Xamarin.QuickUI;
 using Xamarin;
 using Meetum.Views;
+using System.Threading.Tasks;
 
 namespace Meetum.iOS
 {
@@ -18,6 +19,7 @@ namespace Meetum.iOS
         {
             window = new UIWindow (UIScreen.MainScreen.Bounds);
             
+            Meetum.Init(typeof(Meetum).Assembly);
             QuickUI.Init();
             QuickUIMaps.Init();
 
@@ -31,6 +33,7 @@ namespace Meetum.iOS
         {
             var root = new SearchPage();
             var controller = root.CreateViewController();
+            root.LoadData();
             return controller;
         }
     }

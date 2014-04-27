@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Meetum.Controls</RootNamespace>
+    <AssemblyName>Meetum.Controls</AssemblyName>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CarouselView.cs" />
+    <Compile Include="CarouselArgs.cs" />
+    <Compile Include="MyMap.cs" />
+    <Compile Include="HorizontalScrollView.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="Xamarin.QuickUI.Core">
+      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6441\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.QuickUI.Xaml">
+      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6441\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.QuickUI.Maps">
+      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6441\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.Maps.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="../packages/Xamarin.QuickUI.Master.1.0.6441/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets" Condition="Exists('../packages/Xamarin.QuickUI.Master.1.0.6441/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets')" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
