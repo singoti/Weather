@@ -96,6 +96,11 @@ namespace Meetum.Views
                 }
             };
 
+            var menuButton = new Button { Text = "Show Menu", TextColor = Color.White };
+            menuButton.Clicked += async (e, a) => {
+                ((MasterDetailPage)parent.Parent.Parent).IsPresented = true;
+            };
+
             var stack = new StackLayout { Spacing = 0, BackgroundColor = Color.FromHex("A19887")};
 
             map.VerticalOptions = LayoutOptions.FillAndExpand;
@@ -114,6 +119,7 @@ namespace Meetum.Views
             buttonStack.Children.Add (buttonZoomIn);
             buttonStack.Children.Add (buttonZoomOut);
             buttonStack.Children.Add (buttonAddressFromPosition);
+            buttonStack.Children.Add (menuButton);
 
             // Wrap in a horizonal scroll view to handle small screens.
             stack.Children.Add(new ScrollView { Content = buttonStack, HeightRequest = 44, Orientation = ScrollView.ScrollOrientation.Horizontal });

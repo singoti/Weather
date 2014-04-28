@@ -1,12 +1,13 @@
 ﻿using System.Linq;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System;
 
 namespace Meetum.Views
 {
     public class RootPage : MasterDetailPage
     {
-        MainPage displayPage;
+        Page displayPage;
         OptionItem previousItem;
 
         public RootPage ()
@@ -22,7 +23,8 @@ namespace Meetum.Views
 
         public void LoadData()
         {
-            displayPage.LoadData();
+            if (displayPage is MainPage)
+                ((MainPage)displayPage).LoadData();
         }
 
         void NavigateTo (OptionItem option)
@@ -33,11 +35,17 @@ namespace Meetum.Views
             option.Selected = true;
             previousItem = option;
 
-            displayPage = new MainPage { Title = option.Title };
+            if (!option.Title.Equals("Dashboard")) {
+                displayPage = new ContentPage { Title = option.Title, Content = new Label { Text = "FOOOOOOOOO" + new Random().Next() } };
+            } else {
+                displayPage = new MainPage { Title = option.Title };
+            }
 
-            Detail = new NavigationPage(displayPage) {
-                Tint = Color.FromHex("5AA09B"),               
+            var navPage = new NavigationPage(displayPage) {
+                Tint = Color.FromHex("5AA09B")
             };
+
+            Detail = navPage;
 
             IsPresented = false;
         }

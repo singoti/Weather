@@ -50,20 +50,17 @@
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\Components\xamandroidsupportv4-18-4.19.0.1\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.Android">
-      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Maps.Android">
-      <HintPath>..\packages\Xamarin.Forms.Maps.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Maps.Android.dll</HintPath>
+      <HintPath>..\..\..\Duplo\Xamarin.Forms.Core\bin\Debug\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Maps">
-      <HintPath>..\packages\Xamarin.Forms.Maps.Master.1.0.6469\lib\MonoAndroid10\Xamarin.Forms.Maps.dll</HintPath>
+      <HintPath>..\..\..\Duplo\Xamarin.Forms.Maps\bin\Debug\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\..\..\Duplo\Xamarin.Forms.Platform.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.Android">
+      <HintPath>..\..\..\Duplo\Xamarin.Forms.Maps.Android\bin\Debug\Xamarin.Forms.Maps.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -78,7 +75,6 @@
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <None Include="packages.config" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -91,24 +87,6 @@
     <AndroidResource Include="Resources\drawable\zoom_in.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <Import Project="../packages/Xamarin.QuickUI.Master.1.0.6375/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets" Condition="Exists('../packages/Xamarin.QuickUI.Master.1.0.6375/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets')" />
-  <ItemGroup>
-    <ProjectReference Include="..\Meetum\Meetum.csproj">
-      <Project>{2025E1CB-D139-482E-B35E-A2C35082A207}</Project>
-      <Name>Meetum</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Meetum.Controls\Meetum.Controls.csproj">
-      <Project>{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}</Project>
-      <Name>Meetum.Controls</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets" Condition="Exists('..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets'))" />
-  </Target>
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv4-18">
       <Version>4.19.0.1</Version>
@@ -124,5 +102,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Meetum\Meetum.csproj">
+      <Project>{2025E1CB-D139-482E-B35E-A2C35082A207}</Project>
+      <Name>Meetum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Meetum.Controls\Meetum.Controls.csproj">
+      <Project>{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}</Project>
+      <Name>Meetum.Controls</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
