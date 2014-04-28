@@ -11,7 +11,7 @@ using System.Diagnostics;
 namespace Meetum.Views
 {
 
-    public class MapOptionsPage : ContentPage
+    public class MenuPage : ContentPage
     {
         static readonly List<OptionItem> OptionItems = new List<OptionItem> {
             new OptionItem { Title = "Dashboard", Subtitle = "" },
@@ -26,7 +26,7 @@ namespace Meetum.Views
 
         public ListView Menu { get; set; }
 
-        public MapOptionsPage ()
+        public MenuPage ()
         {
             BackgroundColor = Color.FromHex("333333");
 

@@ -23,7 +23,7 @@ namespace Meetum.Android
 
         static Page BuildView()
         {
-            return new SearchPage();
+            return new RootPage();
         }
     }
 }

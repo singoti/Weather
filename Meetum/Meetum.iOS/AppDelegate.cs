@@ -31,7 +31,7 @@ namespace Meetum.iOS
 
         static UIViewController BuildView()
         {
-            var root = new SearchPage();
+            var root = new RootPage();
             var controller = root.CreateViewController();
             root.LoadData();
             return controller;

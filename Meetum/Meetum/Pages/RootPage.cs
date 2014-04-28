@@ -4,15 +4,15 @@ using System.Threading.Tasks;
 
 namespace Meetum.Views
 {
-    public class SearchPage : MasterDetailPage
+    public class RootPage : MasterDetailPage
     {
-        MapDisplayPage displayPage;
+        MainPage displayPage;
         OptionItem previousItem;
 
-        public SearchPage ()
+        public RootPage ()
         {
 
-            var optionsPage = new MapOptionsPage { Icon = "settings.png" };
+            var optionsPage = new MenuPage { Icon = "settings.png" };
             optionsPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.Data as OptionItem);
 
             Master = optionsPage;
@@ -33,7 +33,7 @@ namespace Meetum.Views
             option.Selected = true;
             previousItem = option;
 
-            displayPage = new MapDisplayPage { Title = option.Title };
+            displayPage = new MainPage { Title = option.Title };
 
             Detail = new NavigationPage(displayPage) {
                 Tint = Color.FromHex("5AA09B"),               

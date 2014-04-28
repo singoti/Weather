@@ -67,7 +67,12 @@ namespace Meetum.Views
 
             //Device.BeginInvokeOnMainThread(() => this.Title = "Thread Safe");
 
-            parent.ToolbarItems.Add(new ToolbarItem("Filter", "filter.png", () => {}));
+            parent.ToolbarItems.Add(new ToolbarItem("Filter", "filter.png", async () => 
+                {
+                    var page = new ContentPage ();
+                    var result = await page.DisplayAlert ("Title", "Message", "Accept", "Cancel");
+                    Debug.WriteLine("success: {0}", result);
+                }));
 
             var buttonZoomIn = new Button { Text = "Zoom In", TextColor = Color.White };
             buttonZoomIn.Clicked += (e, a) => map.MoveToRegion (map.VisibleRegion.WithZoom (5f));

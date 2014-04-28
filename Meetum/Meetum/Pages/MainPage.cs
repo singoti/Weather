@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace Meetum.Views
 {
-    public class MapDisplayPage : TabbedPage
+    public class MainPage : TabbedPage
     {
-        public MapDisplayPage()
+        public MainPage()
         {
             BackgroundColor = Color.Black;
 
             BindingContext = new {
-                Tab1 = new TabItem { Title = "Store Map", Icon = "map.png" },
-                Tab2 = new TabItem { Title = "Store List", Icon = "list.png" }
+                Tab1 = new TabItem { Title = "Map", Icon = "map.png" },
+                Tab2 = new TabItem { Title = "List", Icon = "list.png" }
             };
         }
 

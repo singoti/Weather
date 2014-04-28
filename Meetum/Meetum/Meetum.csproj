@@ -34,13 +34,10 @@
     <Compile Include="Converters\GenericValueConverter.cs" />
     <Compile Include="Views\StripedListView.cs" />
     <Compile Include="Views\StripedViewCell.cs" />
-    <Compile Include="Pages\SearchPage.cs" />
     <Compile Include="Models\OptionItem.cs" />
     <Compile Include="Views\DarkTextCell.cs" />
     <Compile Include="Models\TabItem.cs" />
     <Compile Include="Views\CustomerMapFactory.cs" />
-    <Compile Include="Pages\MapOptionsPage.cs" />
-    <Compile Include="Pages\MapDisplayPage.cs" />
     <Compile Include="Views\ScrollableStackLayout.cs" />
     <Compile Include="Meetum.cs" />
     <Compile Include="Models\Author.cs" />
@@ -53,6 +50,9 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\POI.cs" />
     <Compile Include="Models\TestData.cs" />
+    <Compile Include="Pages\RootPage.cs" />
+    <Compile Include="Pages\MenuPage.cs" />
+    <Compile Include="Pages\MainPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
