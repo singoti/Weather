@@ -20,10 +20,10 @@ namespace Meetum.Views
             NavigateTo(optionsPage.Menu.ItemSource.Cast<OptionItem>().First());
         }
 
-        public void LoadData()
-        {
-            displayPage.LoadData();
-        }
+//        public void LoadData()
+//        {
+//            displayPage.LoadData();
+//        }
 
         void NavigateTo (OptionItem option)
         {
