@@ -20,6 +20,7 @@ namespace Meetum.Views
             var list = new ListView();
             list.ItemSource = data;
             var cell = new DataTemplate(typeof(TextCell));
+            cell.SetValue(VisualElement.BackgroundColorProperty, Color.FromHex("A19887"));
             cell.SetBinding(TextCell.TextProperty, "Labels[0].Value");
             cell.SetBinding(TextCell.DetailProperty, "Categories[0].Value");
 

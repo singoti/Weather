@@ -21,20 +21,16 @@ namespace Meetum.Android
 {
     public class DarkTextCellRenderer : TextCellRenderer
     {
-
         protected override View GetCellCore (Cell item, View convertView, ViewGroup parent, Context context)
         {
-            using (var color = new ColorDrawable(Color.FromHex("5AA09B").ToAndroid()))
-            {
-                ((Activity) context).ActionBar.SetBackgroundDrawable (color);
-            }
-
             var cell = (LinearLayout)base.GetCellCore (item, convertView, parent, context);
-            cell.SetPadding(40, 10, 0, 10);
+            cell.SetPadding(20, 10, 0, 10);
             cell.DividerPadding = 50;
+
             var div = new ShapeDrawable();
             div.SetIntrinsicHeight(1);
             div.Paint.Set(new Paint { Color = Color.FromHex("AAAAAA").ToAndroid() });
+
             if (parent is ListView) {
                 ((ListView)parent).Divider = div;
                 ((ListView)parent).DividerHeight = 1;
