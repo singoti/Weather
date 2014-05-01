@@ -74,10 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Models\Poi.json">
-      <LogicalName>Meetum.Models.Poi.json</LogicalName>
+    <EmbeddedResource Include="Data\Poi.json">
+      <LogicalName>Meetum.Data.Poi.json</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
