@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Meetum.Views
 {
-    public static class CustomerMapFactory
+    public static class MapFactory
     {
         public static StackLayout InitalizeList (ContentPage parent)
         {
