@@ -1,46 +1,47 @@
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
-using System.ServiceModel.Channels;
-using System.Threading.Tasks;
 
 namespace Meetum.Views
 {
     public class MainPage : TabbedPage
     {
+        readonly ObservableCollection<TabItem> buttons = new ObservableCollection<TabItem>();
+
         public MainPage()
         {
             BackgroundColor = Color.Black;
 
-            BindingContext = new {
-                Tab1 = new TabItem { Title = "Map", Icon = "map.png" },
-                Tab2 = new TabItem { Title = "List", Icon = "list.png" }
-            };
+            buttons.Add(new TabItem { Title = "Map", Icon = "map.png" });
+            buttons.Add(new TabItem { Title = "List", Icon = "list.png" });
+
+            ItemSource = buttons;
+
+            ItemTemplate = new DataTemplate(()=>
+                {
+                    var page = SelectedItem == null 
+                        ? CreateMapTab() 
+                        : CreateListTab();
+
+                    return page;
+                });
         }
 
-        public void LoadData()
-        {
-            Children.Add(CreateMapTab());
-            Children.Add(CreateListTab());
-        }
-
-        Page CreateMapTab ()
+        static Page CreateMapTab ()
         {
             var page = new ContentPage();
-            page.Content = CustomerMapFactory.InitializeMap(page);
+            page.Content = MapFactory.InitializeMap(page);
 
-            page.SetBinding(BindableObject.BindingContextProperty, "Tab1");
             page.SetBinding(Page.TitleProperty, "Title");
             page.SetBinding(Page.IconProperty, "Icon");
 
             return page;
         }
 
-        Page CreateListTab ()
+        static Page CreateListTab ()
         {
             var page = new ContentPage();
-            page.Content = CustomerMapFactory.InitalizeList(page);
+            page.Content = MapFactory.InitalizeList(page);
 
-            page.SetBinding(BindableObject.BindingContextProperty, "Tab2");
             page.SetBinding(Page.TitleProperty, "Title");
             page.SetBinding(Page.IconProperty, "Icon");
 

@@ -62,6 +62,9 @@
     <Reference Include="Xamarin.Forms.Maps.Android">
       <HintPath>..\..\..\Duplo\Xamarin.Forms.Maps.Android\bin\Debug\Xamarin.Forms.Maps.Android.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -76,6 +79,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -85,6 +89,7 @@
     <AndroidResource Include="Resources\drawable\map.png" />
     <AndroidResource Include="Resources\drawable\zoom_out.png" />
     <AndroidResource Include="Resources\drawable\zoom_in.png" />
+    <AndroidResource Include="Resources\drawable\filter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -96,9 +101,6 @@
       <Version>16.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\drawable\filter.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

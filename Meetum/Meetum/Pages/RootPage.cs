@@ -21,11 +21,11 @@ namespace Meetum.Views
             NavigateTo(optionsPage.Menu.ItemSource.Cast<OptionItem>().First());
         }
 
-        public void LoadData()
-        {
-            if (displayPage is MainPage)
-                ((MainPage)displayPage).LoadData();
-        }
+//        public void LoadData()
+//        {
+//            if (displayPage is MainPage)
+//                ((MainPage)displayPage).LoadData();
+//        }
 
         void NavigateTo (OptionItem option)
         {
