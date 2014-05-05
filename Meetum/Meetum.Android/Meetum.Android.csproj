@@ -16,6 +16,8 @@
     <AssemblyName>Meetum.Android</AssemblyName>
     <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -95,13 +97,12 @@
   </ItemGroup>
   <Import Project="..\Meetup.Shared\Meetup.Shared.projitems" Label="Shared" Condition="Exists('..\Meetup.Shared\Meetup.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets" Condition="Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" />
-  <Import Project="../packages/Xamarin.QuickUI.Master.1.0.6458/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <ItemGroup />
   <ItemGroup>
@@ -114,4 +115,5 @@
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

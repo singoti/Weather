@@ -5,7 +5,7 @@ namespace Meetum.iOS
 {
 	class SignaturePageRenderer : StoryBoardRenderer<SignatureViewController>
 	{
-		public SignaturePageRenderer () : base("SignatureStoryBoard")
+		public SignaturePageRenderer () : base("SignatureStoryboard")
 		{
 		}
 

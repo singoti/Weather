@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Point.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TabItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TestData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\CustomerDetailsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\DetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\MenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\RootPage.cs" />

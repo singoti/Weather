@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using Meetum.Models;
 using System.IO;
+using Meetup.Shared.Pages;
 
 namespace Meetum.Views
 {
@@ -27,6 +28,11 @@ namespace Meetum.Views
             cell.SetBinding(TextCell.DetailProperty, "Categories[0].Value");
 
             list.ItemTemplate = cell;
+
+						list.ItemTapped += (sender, args) =>
+							{
+								parent.Navigation.Push(new CustomerDetailsPage { BindingContext = args.Data }); 
+							};
 
             var stack = new StackLayout();
             stack.Children.Add(list);

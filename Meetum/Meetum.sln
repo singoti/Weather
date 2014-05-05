@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meetum.iOS", "Meetum.iOS\Meetum.iOS.csproj", "{6A02ABA0-EE87-4C04-A065-BEF98D7F4E53}"
@@ -9,9 +9,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meetum.Android", "Meetum.An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meetum.WindowsPhone", "Meetum.WindowsPhone\Meetum.WindowsPhone.csproj", "{91CD0EDB-85F3-4281-B340-1DA6977C233B}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Meetup.Shared", "Meetup.Shared\Meetup.Shared.shproj", "2DDBD0EB-9989-4194-86D0-216F141CB69A"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Meetup.Shared", "Meetup.Shared\Meetup.Shared.shproj", "{18CFFBFF-30E2-4718-8832-4E83A54D82FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{913581B1-DD3D-4D0A-BA1A-34CCC1335376}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Meetup.Shared\Meetup.Shared.projitems*{83491f6d-ba09-477d-9dc0-3e670794579f}*SharedItemsImports = 4
+		Meetup.Shared\Meetup.Shared.projitems*{91cd0edb-85f3-4281-b340-1da6977c233b}*SharedItemsImports = 4
+		Meetup.Shared\Meetup.Shared.projitems*{6a02aba0-ee87-4c04-a065-bef98d7f4e53}*SharedItemsImports = 4
+		Meetup.Shared\Meetup.Shared.projitems*{18cffbff-30e2-4718-8832-4e83a54d82fc}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
@@ -186,16 +199,10 @@ Global
 		{91CD0EDB-85F3-4281-B340-1DA6977C233B}.Release|x86.Build.0 = Release|x86
 		{91CD0EDB-85F3-4281-B340-1DA6977C233B}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Meetum.iOS\Meetum.iOS.csproj
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Meetup.Shared\Meetup.Shared.projitems*{2ddbd0eb-9989-4194-86d0-216f141cb69a}*SharedItemsImports = 13
-		Meetup.Shared\Meetup.Shared.projitems*{83491f6d-ba09-477d-9dc0-3e670794579f}*SharedItemsImports = 4
-		Meetup.Shared\Meetup.Shared.projitems*{91cd0edb-85f3-4281-b340-1da6977c233b}*SharedItemsImports = 4
-		Meetup.Shared\Meetup.Shared.projitems*{6a02aba0-ee87-4c04-a065-bef98d7f4e53}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Meetum.iOS\Meetum.iOS.csproj
 	EndGlobalSection
 EndGlobal
