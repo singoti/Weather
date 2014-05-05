@@ -96,20 +96,23 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="Xamarin.QuickUI.Core">
-      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\MonoTouch10\Xamarin.QuickUI.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.QuickUI.Maps">
-      <HintPath>..\packages\Xamarin.QuickUI.Maps.1.0.6175\lib\MonoTouch10\Xamarin.QuickUI.Maps.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.QuickUI.Maps.iOS">
-      <HintPath>..\packages\Xamarin.QuickUI.Maps.1.0.6175\lib\MonoTouch10\Xamarin.QuickUI.Maps.iOS.dll</HintPath>
+    <Reference Include="SignaturePad.iOS">
+      <HintPath>..\Components\signature-pad-1.3.3\lib\ios\SignaturePad.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.QuickUI.Platform.iOS">
-      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\MonoTouch10\Xamarin.QuickUI.Platform.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6458\lib\MonoTouch10\Xamarin.QuickUI.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.QuickUI.Core">
+      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6458\lib\MonoTouch10\Xamarin.QuickUI.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.QuickUI.Xaml">
-      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\MonoTouch10\Xamarin.QuickUI.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6458\lib\MonoTouch10\Xamarin.QuickUI.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.QuickUI.Maps.iOS">
+      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6458\lib\MonoTouch10\Xamarin.QuickUI.Maps.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.QuickUI.Maps">
+      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6458\lib\MonoTouch10\Xamarin.QuickUI.Maps.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -138,15 +141,31 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\DarkTextCellRenderer.cs" />
+    <Compile Include="Renderers\SignaturePageRenderer.cs" />
+    <Compile Include="Renderers\StoryBoardRenderer.cs" />
+    <Compile Include="SignatureViewController.cs" />
+    <Compile Include="SignatureViewController.designer.cs">
+      <DependentUpon>SignatureViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="..\Meetup.Shared\Meetup.Shared.projitems" Label="Shared" Condition="Exists('..\Meetup.Shared\Meetup.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup />
   <Import Project="..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets" Condition="Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" />
+  <Import Project="../packages/Xamarin.QuickUI.Master.1.0.6458/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.QuickUI.Master.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets'))" />
   </Target>
+  <ItemGroup>
+    <XamarinComponentReference Include="signature-pad">
+      <Version>1.3.3</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Renderers\SignatureStoryboard.storyboard" />
+  </ItemGroup>
 </Project>
