@@ -5,7 +5,7 @@ using Xamarin.QuickUI;
 using Meetup.Shared.Pages;
 using Meetum.iOS;
 
-[assembly: ExportCell(typeof(CustomerDetailsPage), typeof(SignaturePageRenderer))]
+
 
 namespace Meetum.iOS
 {
