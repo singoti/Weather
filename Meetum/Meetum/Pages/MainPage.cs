@@ -5,25 +5,17 @@ namespace Meetum.Views
 {
     public class MainPage : TabbedPage
     {
-        readonly ObservableCollection<TabItem> buttons = new ObservableCollection<TabItem>();
-
         public MainPage()
         {
             BackgroundColor = Color.Black;
 
-            buttons.Add(new TabItem { Title = "Map", Icon = "map.png" });
-            buttons.Add(new TabItem { Title = "List", Icon = "list.png" });
+            BindingContext = new {
+                MapTab = new TabItem { Title = "Map", Icon = "map.png" },
+                ListTab = new TabItem { Title = "List", Icon = "list.png" }
+            };
 
-            ItemSource = buttons;
-
-            ItemTemplate = new DataTemplate(()=>
-                {
-                    var page = SelectedItem == null 
-                        ? CreateMapTab() 
-                        : CreateListTab();
-
-                    return page;
-                });
+            Children.Add(CreateMapTab());
+            Children.Add(CreateListTab());
         }
 
         static Page CreateMapTab ()
@@ -31,6 +23,7 @@ namespace Meetum.Views
             var page = new ContentPage();
             page.Content = MapFactory.InitializeMap(page);
 
+            page.SetBinding(BindableObject.BindingContextProperty, "MapTab");
             page.SetBinding(Page.TitleProperty, "Title");
             page.SetBinding(Page.IconProperty, "Icon");
 
@@ -42,6 +35,7 @@ namespace Meetum.Views
             var page = new ContentPage();
             page.Content = MapFactory.InitalizeList(page);
 
+            page.SetBinding(BindableObject.BindingContextProperty, "ListTab");
             page.SetBinding(Page.TitleProperty, "Title");
             page.SetBinding(Page.IconProperty, "Icon");
 

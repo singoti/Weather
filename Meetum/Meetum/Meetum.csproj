@@ -36,7 +36,6 @@
     <Compile Include="Views\StripedViewCell.cs" />
     <Compile Include="Models\OptionItem.cs" />
     <Compile Include="Views\DarkTextCell.cs" />
-    <Compile Include="Models\TabItem.cs" />
     <Compile Include="Views\ScrollableStackLayout.cs" />
     <Compile Include="Meetum.cs" />
     <Compile Include="Models\Author.cs" />
@@ -53,6 +52,7 @@
     <Compile Include="Pages\MenuPage.cs" />
     <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Views\MapFactory.cs" />
+    <Compile Include="ViewModels\TabItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Models\Poi.json">

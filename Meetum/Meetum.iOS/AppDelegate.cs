@@ -33,7 +33,6 @@ namespace Meetum.iOS
         {
             var root = new RootPage();
             var controller = root.CreateViewController();
-//            root.LoadData();
             return controller;
         }
     }
