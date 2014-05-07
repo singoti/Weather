@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using Xamarin.Forms.Maps;
 
 namespace Meetum.Views
 {
@@ -17,13 +19,47 @@ namespace Meetum.Views
 
             Master = optionsPage;
 
+            ShowLoginDialog();
+
             NavigateTo(optionsPage.Menu.ItemSource.Cast<OptionItem>().First());
         }
 
-//        public void LoadData()
-//        {
-//            displayPage.LoadData();
-//        }
+        async void ShowLoginDialog ()
+        {
+            var layout = new StackLayout();
+            var label = new Label 
+            {
+                Text = "Connect with Your Data",
+                Font = Font.BoldSystemFontOfSize(NamedSize.Large),
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                XAlign = TextAlignment.Center, // Center the text in the blue box.
+                YAlign = TextAlignment.Center, // Center the text in the blue box.
+            };
+
+            layout.Children.Add(label);
+
+            var username = new Entry() { Placeholder = "Username" };
+            layout.Children.Add(username);
+
+            var password = new Entry() { Placeholder = "Password" };
+            layout.Children.Add(password);
+
+            var page = new ContentPage 
+            {
+                Content = layout
+            };
+
+            var button = new Button() { Text = "Sign In"};
+            button.Clicked += async (sender, e) =>
+            {
+                await Navigation.PopModal();
+                Debug.WriteLine(username.Text);
+                Debug.WriteLine(password.Text);
+            };
+            layout.Children.Add(button);
+
+            await Navigation.PushModal(page);
+        }
 
         void NavigateTo (OptionItem option)
         {

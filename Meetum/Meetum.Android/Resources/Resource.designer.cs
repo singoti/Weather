@@ -238,10 +238,13 @@ namespace Meetum.Android
 			public const int map = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int zoom_in = 2130837535;
+			public const int settings = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int zoom_out = 2130837536;
+			public const int zoom_in = 2130837536;
+			
+			// aapt resource value: 0x7f020021
+			public const int zoom_out = 2130837537;
 			
 			static Drawable()
 			{
