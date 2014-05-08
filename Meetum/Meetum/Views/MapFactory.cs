@@ -99,9 +99,7 @@ namespace Meetum.Views
 
             var stack = new StackLayout { Spacing = 0, BackgroundColor = Color.FromHex("A19887")};
 
-            map.VerticalOptions = LayoutOptions.FillAndExpand;
             map.HeightRequest = 100;
-            map.WidthRequest = 960;
             stack.Children.Add (searchAddress);
             stack.Children.Add (map);
 
@@ -117,7 +115,10 @@ namespace Meetum.Views
             buttonStack.Children.Add (buttonAddressFromPosition);
 
             // Wrap in a horizonal scroll view to handle small screens.
-            stack.Children.Add(new ScrollView { Content = buttonStack, HeightRequest = 44, Orientation = ScrollView.ScrollOrientation.Horizontal });
+            var scrollView = new ScrollView { Content = buttonStack, HeightRequest = 44, Orientation = ScrollView.ScrollOrientation.Horizontal };
+            scrollView.SizeChanged += (object sender, EventArgs e) => 
+                Debug.WriteLine(scrollView.ContentSize);
+            stack.Children.Add(scrollView);
 
             return stack;
         }
