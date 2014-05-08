@@ -31,4 +31,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\StripedListView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\StripedViewCell.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Data\Poi.json" />
+  </ItemGroup>
 </Project>

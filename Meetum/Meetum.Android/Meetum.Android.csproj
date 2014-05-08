@@ -12,12 +12,18 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>
+    </AndroidUseLatestPlatformSdk>
     <AssemblyName>Meetum.Android</AssemblyName>
-    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaOptions />
+    <NuGetPackageImportStamp>213aed41</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +48,10 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GooglePlayServicesLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Components\googleplayservices-13.0\lib\android\GooglePlayServicesLib.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -50,26 +60,25 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Support.v13" />
-    <Reference Include="Xamarin.QuickUI.Platform.Android">
-      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6458\lib\MonoAndroid10\Xamarin.QuickUI.Platform.Android.dll</HintPath>
+    <Reference Include="Xamarin.QuickUI.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\MonoAndroid10\Xamarin.QuickUI.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.QuickUI.Core">
-      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6458\lib\MonoAndroid10\Xamarin.QuickUI.Core.dll</HintPath>
+    <Reference Include="Xamarin.QuickUI.Maps, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Xamarin.QuickUI.Maps.1.0.6175\lib\MonoAndroid10\Xamarin.QuickUI.Maps.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.QuickUI.Xaml">
-      <HintPath>..\packages\Xamarin.QuickUI.Master.1.0.6458\lib\MonoAndroid10\Xamarin.QuickUI.Xaml.dll</HintPath>
+    <Reference Include="Xamarin.QuickUI.Maps.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Xamarin.QuickUI.Maps.1.0.6175\lib\MonoAndroid10\Xamarin.QuickUI.Maps.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.QuickUI.Maps.Android">
-      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6458\lib\MonoAndroid10\Xamarin.QuickUI.Maps.Android.dll</HintPath>
+    <Reference Include="Xamarin.QuickUI.Platform.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\MonoAndroid10\Xamarin.QuickUI.Platform.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.QuickUI.Maps">
-      <HintPath>..\packages\Xamarin.QuickUI.Maps.Master.1.0.6458\lib\MonoAndroid10\Xamarin.QuickUI.Maps.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\Components\xamandroidsupportv4-18-19.1.0\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
-    </Reference>
-    <Reference Include="GooglePlayServicesLib">
-      <HintPath>..\Components\googleplayservices-13.0\lib\android\GooglePlayServicesLib.dll</HintPath>
+    <Reference Include="Xamarin.QuickUI.Xaml, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Xamarin.QuickUI.1.0.6175\lib\MonoAndroid10\Xamarin.QuickUI.Xaml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -93,7 +102,25 @@
     <AndroidResource Include="Resources\drawable\map.png" />
     <AndroidResource Include="Resources\drawable\zoom_out.png" />
     <AndroidResource Include="Resources\drawable\zoom_in.png" />
-    <AndroidResource Include="Resources\drawable\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="googleplayservices">
+      <Visible>False</Visible>
+      <Version>13.0</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\filter.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\filter.png" />
   </ItemGroup>
   <Import Project="..\Meetup.Shared\Meetup.Shared.projitems" Label="Shared" Condition="Exists('..\Meetup.Shared\Meetup.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
@@ -103,17 +130,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets'))" />
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets'))" />
   </Target>
-  <ItemGroup />
-  <ItemGroup>
-    <XamarinComponentReference Include="xamandroidsupportv4-18">
-      <Version>19.1.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-    <XamarinComponentReference Include="googleplayservices">
-      <Version>13.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-  </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets" Condition="Exists('..\packages\Xamarin.QuickUI.1.0.6175\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.QuickUI.targets')" />
 </Project>
