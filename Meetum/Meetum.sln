@@ -126,7 +126,7 @@ Global
 		{E5B06F8C-640C-412C-B0CD-852A6CA57DFF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Meetum.iOS\Meetum.iOS.csproj
+		StartupItem = Meetum.Android\Meetum.Android.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
