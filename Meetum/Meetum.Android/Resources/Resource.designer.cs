@@ -35,52 +35,49 @@ namespace Meetum.Android
 			public const int adSize = 2130771968;
 			
 			// aapt resource value: 0x7f010001
-			public const int adSizes = 2130771969;
-			
-			// aapt resource value: 0x7f010002
-			public const int adUnitId = 2130771970;
-			
-			// aapt resource value: 0x7f010004
-			public const int cameraBearing = 2130771972;
-			
-			// aapt resource value: 0x7f010005
-			public const int cameraTargetLat = 2130771973;
-			
-			// aapt resource value: 0x7f010006
-			public const int cameraTargetLng = 2130771974;
-			
-			// aapt resource value: 0x7f010007
-			public const int cameraTilt = 2130771975;
-			
-			// aapt resource value: 0x7f010008
-			public const int cameraZoom = 2130771976;
+			public const int adUnitId = 2130771969;
 			
 			// aapt resource value: 0x7f010003
-			public const int mapType = 2130771971;
+			public const int cameraBearing = 2130771971;
+			
+			// aapt resource value: 0x7f010004
+			public const int cameraTargetLat = 2130771972;
+			
+			// aapt resource value: 0x7f010005
+			public const int cameraTargetLng = 2130771973;
+			
+			// aapt resource value: 0x7f010006
+			public const int cameraTilt = 2130771974;
+			
+			// aapt resource value: 0x7f010007
+			public const int cameraZoom = 2130771975;
+			
+			// aapt resource value: 0x7f010002
+			public const int mapType = 2130771970;
+			
+			// aapt resource value: 0x7f010008
+			public const int uiCompass = 2130771976;
 			
 			// aapt resource value: 0x7f010009
-			public const int uiCompass = 2130771977;
+			public const int uiRotateGestures = 2130771977;
 			
 			// aapt resource value: 0x7f01000a
-			public const int uiRotateGestures = 2130771978;
+			public const int uiScrollGestures = 2130771978;
 			
 			// aapt resource value: 0x7f01000b
-			public const int uiScrollGestures = 2130771979;
+			public const int uiTiltGestures = 2130771979;
 			
 			// aapt resource value: 0x7f01000c
-			public const int uiTiltGestures = 2130771980;
+			public const int uiZoomControls = 2130771980;
 			
 			// aapt resource value: 0x7f01000d
-			public const int uiZoomControls = 2130771981;
+			public const int uiZoomGestures = 2130771981;
 			
 			// aapt resource value: 0x7f01000e
-			public const int uiZoomGestures = 2130771982;
+			public const int useViewLifecycle = 2130771982;
 			
 			// aapt resource value: 0x7f01000f
-			public const int useViewLifecycle = 2130771983;
-			
-			// aapt resource value: 0x7f010010
-			public const int zOrderOnTop = 2130771984;
+			public const int zOrderOnTop = 2130771983;
 			
 			static Attribute()
 			{
@@ -238,13 +235,10 @@ namespace Meetum.Android
 			public const int map = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int settings = 2130837535;
+			public const int zoom_in = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int zoom_in = 2130837536;
-			
-			// aapt resource value: 0x7f020021
-			public const int zoom_out = 2130837537;
+			public const int zoom_out = 2130837536;
 			
 			static Drawable()
 			{
@@ -322,8 +316,8 @@ namespace Meetum.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f06001c
-			public const int app_name = 2131099676;
+			// aapt resource value: 0x7f06001b
+			public const int app_name = 2131099675;
 			
 			// aapt resource value: 0x7f060015
 			public const int auth_client_needs_enabling_title = 2131099669;
@@ -403,11 +397,8 @@ namespace Meetum.Android
 			// aapt resource value: 0x7f060013
 			public const int common_signin_button_text_long = 2131099667;
 			
-			// aapt resource value: 0x7f06001b
-			public const int hello = 2131099675;
-			
 			// aapt resource value: 0x7f06001a
-			public const int location_client_powered_by_google = 2131099674;
+			public const int hello = 2131099674;
 			
 			static String()
 			{
@@ -441,20 +432,17 @@ namespace Meetum.Android
 			public static int[] AdsAttrs = new int[]
 			{
 					2130771968,
-					2130771969,
-					2130771970};
+					2130771969};
 			
 			// aapt resource value: 0
 			public const int AdsAttrs_adSize = 0;
 			
 			// aapt resource value: 1
-			public const int AdsAttrs_adSizes = 1;
-			
-			// aapt resource value: 2
-			public const int AdsAttrs_adUnitId = 2;
+			public const int AdsAttrs_adUnitId = 1;
 			
 			public static int[] MapAttrs = new int[]
 			{
+					2130771970,
 					2130771971,
 					2130771972,
 					2130771973,
@@ -467,8 +455,7 @@ namespace Meetum.Android
 					2130771980,
 					2130771981,
 					2130771982,
-					2130771983,
-					2130771984};
+					2130771983};
 			
 			// aapt resource value: 1
 			public const int MapAttrs_cameraBearing = 1;

@@ -9,6 +9,7 @@ using System.Resources;
 using Meetum.Models;
 using System.IO;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Meetum.Views
 {
@@ -17,15 +18,39 @@ namespace Meetum.Views
         public static StackLayout InitalizeList (ContentPage parent)
         {
             var data = LoadData ();
-            var list = new ListView();
+            
+			var cell = new DataTemplate(typeof(TextCell));
+			cell.SetBinding(TextCell.TextProperty, "Labels[0].Value");
+			cell.SetBinding(TextCell.DetailProperty, "Categories[0].Value");
+
+			var list = new ListView();
             list.ItemSource = data;
-            var cell = new DataTemplate(typeof(TextCell));
-            cell.SetBinding(TextCell.TextProperty, "Labels[0].Value");
-            cell.SetBinding(TextCell.DetailProperty, "Categories[0].Value");
+			list.ItemTemplate = cell;
+			list.ItemSelected += (sender, e) => 
+			{
 
-            list.ItemTemplate = cell;
+				// Use reflection to turn our object
+				// into a property bag.
+				var detailList = new ListView();
+				detailList.ItemSource = e.SelectedItem
+					.GetType()
+					.GetRuntimeProperties()
+					.Select(pi => new KeyValuePair<string,object>(pi.Name, pi.GetValue(e.SelectedItem)));
 
-            var stack = new StackLayout();
+				// Then bind our template to the key value pairs.
+				detailList.ItemTemplate = new DataTemplate(typeof(TextCell));
+				detailList.ItemTemplate.SetBinding(TextCell.TextProperty, "Key");
+				detailList.ItemTemplate.SetBinding(TextCell.DetailProperty, "Value");
+
+				parent.Navigation.Push(
+					new ContentPage {
+						Content = detailList,
+						Title = ((POI)e.SelectedItem).Labels[0].Value
+					}
+				);
+			};
+
+			var stack = new StackLayout();
             stack.Children.Add(list);
 
             return stack;
@@ -154,7 +179,6 @@ namespace Meetum.Views
 
             var xamarin = new Position(37.797536, -122.401933);;
             var m = new MyMap(MapSpan.FromCenterAndRadius(xamarin, Distance.FromMiles(0.1)));
-
             foreach(var p in pins) 
             {
                 m.Pins.Add(p);

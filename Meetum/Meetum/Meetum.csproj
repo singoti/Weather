@@ -56,29 +56,28 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6560\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6595\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6560\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.Master.1.0.6595\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Maps">
-      <HintPath>..\packages\Xamarin.Forms.Maps.Master.1.0.6560\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Maps.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.Maps.Master.1.0.6595\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets" Condition="Exists('..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets')" />
-  <Import Project="../packages/Xamarin.Forms.Master.1.0.6560/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.Master.targets" />
+  <Import Project="../packages/Xamarin.Forms.Master.1.0.6595/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.Master.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.Master.1.0.6469\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.Master.1.0.6595\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.Master.1.0.6595\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Master.targets'))" />
   </Target>
   <ItemGroup>
     <ProjectReference Include="..\Meetum.Controls\Meetum.Controls.csproj">
