@@ -13,7 +13,7 @@ namespace Meetum.Views
         {
 
             var optionsPage = new MenuPage { Icon = "settings.png" };
-            optionsPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.Data as OptionItem);
+			optionsPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.SelectedItem as OptionItem);
 
             Master = optionsPage;
 
