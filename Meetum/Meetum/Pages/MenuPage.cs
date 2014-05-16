@@ -14,7 +14,6 @@ namespace Meetum.Views
     public class MenuPage : ContentPage
     {
         static readonly List<OptionItem> OptionItems = new List<OptionItem> {
-            new OptionItem { Title = "Dashboard", Subtitle = "" },
             new OptionItem { Title = "Favorites", Subtitle = "" },
             new OptionItem { Title = "Accounts", Subtitle = "3" },
             new OptionItem { Title = "Opportunities", Subtitle = "103" },
@@ -32,21 +31,23 @@ namespace Meetum.Views
 
             var layout = new StackLayout { Spacing = 0 };
 
-            var label = new ContentView {
+			var label = new Label {
+				Text = "Menu".ToUpper(), 
+				TextColor = Color.FromHex("AAAAAA")
+			};
+
+			var headerView = new ContentView {
                 Padding = new Thickness(10, 36, 0, 5),
                 BackgroundColor = Color.Transparent,
-                Content = new Label {
-                    Text = "Menu".ToUpper(), 
-                    TextColor = Color.FromHex("AAAAAA")
-                }
+				Content = label
             };
 
-            Device.OnPlatform (
-                iOS: () => ((Label)label.Content).Font = Font.SystemFontOfSize (NamedSize.Micro),
-                Android: () => ((Label)label.Content).Font = Font.SystemFontOfSize (NamedSize.Medium)
-            );
+			Device.OnPlatform (
+				iOS: () => label.Font = Font.SystemFontOfSize (NamedSize.Micro),
+				Android: () => label.Font = Font.SystemFontOfSize (NamedSize.Medium)
+			);
 
-            layout.Children.Add(label);
+            layout.Children.Add(headerView);
 
             Menu = new ListView {
                 ItemSource = OptionItems,
@@ -57,10 +58,9 @@ namespace Meetum.Views
             var cell = new DataTemplate(typeof(DarkTextCell));
             cell.SetBinding(TextCell.TextProperty, "Title");
             cell.SetBinding(TextCell.DetailProperty, "Subtitle");
+			cell.SetValue(VisualElement.BackgroundColorProperty, Color.Transparent);
 
             Menu.ItemTemplate = cell;
-            Menu.ItemTemplate.SetValue(VisualElement.BackgroundColorProperty, Color.Transparent);
-            Menu.ItemTemplate.SetBinding(VisualElement.BackgroundColorProperty, "BackgroundColor");
 
             layout.Children.Add(Menu);
 

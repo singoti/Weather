@@ -35,13 +35,15 @@ namespace Meetum.Views
 				detailList.ItemSource = e.SelectedItem
 					.GetType()
 					.GetRuntimeProperties()
+					.Where(pi => 
+						pi.GetValue(e.SelectedItem) != null)
 					.Select(pi => new KeyValuePair<string,object>(pi.Name, pi.GetValue(e.SelectedItem)));
 
 				// Then bind our template to the key value pairs.
 				detailList.ItemTemplate = new DataTemplate(typeof(TextCell));
 				detailList.ItemTemplate.SetBinding(TextCell.TextProperty, "Key");
 				detailList.ItemTemplate.SetBinding(TextCell.DetailProperty, "Value");
-
+				detailList.SetValue(VisualElement.BackgroundColorProperty, Color.Silver);
 				parent.Navigation.Push(
 					new ContentPage {
 						Content = detailList,
