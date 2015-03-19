@@ -204,9 +204,6 @@ Global
 		{7A6D4379-AD44-46C6-A66F-7E35F58CD089}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7A6D4379-AD44-46C6-A66F-7E35F58CD089}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = BoxViewClock\BoxViewClock.iOS\BoxViewClock.iOS.csproj
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

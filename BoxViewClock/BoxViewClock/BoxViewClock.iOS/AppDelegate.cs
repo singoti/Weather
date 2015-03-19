@@ -28,6 +28,8 @@ namespace BoxViewClock.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+			Xamarin.Calabash.Start ();
+
             Forms.Init();
 
             window = new UIWindow(UIScreen.MainScreen.Bounds);
